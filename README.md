@@ -1,4 +1,5 @@
-# Swasth
+<img src="https://raw.githubusercontent.com/PixeL-TryHard/Swasth/main/Capture.png">
+<h1>Swasth</h1>
 <H2>PROBLEM  STATEMENT</H2>
 <ul>
 <li>To improve the ability of health service facilities and stakeholders to predict disease epidemics and health-related events.</li>
