@@ -1,0 +1,172 @@
+<html>
+<head>
+<title>Registration form</title>
+<style>
+#main {
+  width: 650px;
+  height: 650px;
+  border: 1px solid #DCF8EF;
+  margin: auto;
+  background: #32AB7D;
+  box-shadow: 1px 1px 1px 1px #DCF8EF;
+}
+
+#row {
+  width: 99%;
+  height: 50px;
+  border: 1px solid #32AB7D;
+}
+
+.col {
+  width: 32%;
+  height: 20%;
+  border: 1px solid #32AB7D;
+  float: left;
+  margin-left: 2px;
+}
+
+input[type=radio] {
+  border: 0px;
+  width: 7%;
+  height: 0.7em;
+}
+
+input {
+  height: 35px;
+  width: 210px;
+  border-radius: 2px;
+  font-family: "Segoe Print", Arial, sans-serif;
+}
+
+input[type=submit] {
+  width: 100px;
+}
+
+input:hover {
+  border: 1px solid red;
+}
+
+input:hover {
+  background: #32AB7D;
+}
+
+input {
+  font-size: 25px;
+}
+
+.r {
+  width: 10px;
+  height: 15px;
+  font-size: 10px;
+}
+</style>
+
+<script type="text/javascript">
+function chkblnk(eid, errid) {
+  var x = document.getElementById(eid).value;
+  if (x == "") {
+    document.getElementById(errid).innerHTML = "Please fill this field";
+  } else {
+    document.getElementById(errid).innerHTML = "";
+  }
+}
+</script>
+</head>
+<body>
+<div id="main">
+  <h3 align="center" style="color: #DCF8EF; font-family: 'Segoe Print', Arial, sans-serif">Registration Form</h3>
+  <form action="reg.php" method="POST">
+<span style="font-family: 'Segoe Print', Arial, sans-serif">
+  <div id="row" style="color: #DCF8EF">
+    <div class="col">Full Name:</div>
+    <div class="col"><input type="text" id="Name" name="Name" onblur="chkblnk('ln','error')"/></div>
+    <div class="col" id="error" style="color:red"></div>
+  </div>
+  <div id="row" style="color: #DCF8EF">
+    <div class="col">Gender:</div>
+    <div class="col">
+      <input type="radio" id="gender" name="gender" value="Male"/>
+	<span style="font-size: 14px;"> MALE</span><br>  
+      <input type="radio" id="gender" name="gender" value="Female"/>
+	<span style="font-size: 14px;"> FEMALE</span><br/>       
+    </div>
+    <div class="col" id="error3" style="color:red"></div>
+  </div>
+  <div id="row" style="color: #DCF8EF">
+    <div class="col">Age:</div>
+    <div class="col">
+      <input type="number" id="Age" name="Age" min="0" max="120" step="1" required/>
+    </div>
+    <div class="col" id="error5" style="color:red"></div>
+  </div>
+  <div id="row" style="color: #DCF8EF">
+    <div class="col">Vaccinated:</div>
+    <div class="col">
+      <input type="radio" id="Vaccine" name="Vaccine" value="Yes"/>
+      <span style="font-size: 14px;"> YES</span><br>  
+      <input type="radio" id="Vaccine" name="Vaccine" value="No"/>
+      <span style="font-size: 14px;"> NO</span><br/>       
+    </div>
+    <div class="col" id="error3" style="color:red"></div>
+  </div>
+
+<br>
+ <div id="row" style="color: #DCF8EF">
+    <div class="col">Malaria:</div>
+    <div class="col">
+      <input type="radio" id="Malaria" name="Malaria" value="Yes"/>
+      <span style="font-size: 14px;"> YES</span><br>  
+      <input type="radio" id="Malaria" name="Malaria" value="No"/>
+      <span style="font-size: 14px;"> NO</span><br/>       
+    </div>
+    <div class="col" id="error7" style="color:red"></div>
+  </div>
+<br>
+ <div id="row" style="color: #DCF8EF">
+    <div class="col">Dengue:</div>
+    <div class="col">
+      <input type="radio" id="Dengue" name="Dengue" value="Yes"/>
+      <span style="font-size: 14px;"> YES</span><br>  
+      <input type="radio" id="Dengue" name="Dengue" value="No"/>
+      <span style="font-size: 14px;"> NO</span><br/>       
+    </div>
+    <div class="col" id="error8" style="color:red"></div>
+  </div>
+<br>
+ <div id="row" style="color: #DCF8EF">
+    <div class="col">Covid:</div>
+    <div class="col">
+      <input type="radio" id="Covid" name="Covid" value="Yes"/>
+      <span style="font-size: 14px;"> YES</span><br>  
+      <input type="radio" id="Covid" name="Covid" value="No"/>
+      <span style="font-size: 14px;"> NO</span><br/>       
+    </div>
+    <div class="col" id="error6" style="color:red"></div>
+  </div>
+<br>
+  <div id="row" style="color: #DCF8EF">
+    <div class="col">Blood Group:</div>
+    <div class="col">
+      <input type="text" id="BloodGroup" name="BloodGroup" onblur="chkblnk('ln','error2')"/>
+    </div>
+    <div class="col" id="error2" style="color:red"></div>
+  </div>
+<div id="row" style="color: #DCF8EF">
+  <div class="col"></div>
+  <div class="col" style="text-align: center;">
+    <input type="submit" value="Submit" onclick="showAlert() style="font-size:18px;">
+  </div>
+
+  <div class="col"></div>
+</div>
+<script>
+  function showAlert() {
+    alert("Registration successful!");
+  }
+</script>
+
+</form>
+</div>
+</span>
+</body>
+</html>

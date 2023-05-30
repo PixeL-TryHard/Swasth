@@ -1,0 +1,137 @@
+<html>
+<head>
+<title>Registration form </title>
+<style>
+body{
+background-color: #32ab7d;
+}
+h1{
+font-family: Segoe Print;
+font-size: 40px;
+font-weight: 600;
+font-height: 1.5;
+text-align:center;
+text-decoration:under-line;
+color:#DCF8EF;
+}
+p{
+font-family: Segoe Print;
+font-size: 30px;
+font-weight: 600;
+font-height: 1.5;
+text-align:center;
+text-decoration:under-line;
+color:#DCF8EF;
+}
+</style>
+<script type="text/javascript">
+function chkblnk(eid,errid)
+{
+var x=document.getElementById(eid).value;
+if(x=="")
+{
+document.getElementById(errid).innerHTML="pls fill this field";
+}
+else
+{
+document.getElementById(errid).innerHTML="";
+}
+}
+
+function chkAplha(event,err)
+{
+if(!((event.which>=65 && event.which<=90) || (event.which>=97 && event.which<=122) || event.which==0 || event.which==8))
+{
+document.getElementById(err).innerHTML="invalid name format";
+return false;
+}
+}
+
+function chkeid()
+{
+var e=document.getElementById("e").value;
+var atpos=e.indexOf("@");
+var dotpos=e.lastIndexOf(".");
+if(atpos<4 || dotpos<atpos+3)
+{
+document.getElementById("error2").innerHTML="invalid email";
+}
+else
+{
+document.getElementById("error2").innerHTML="";
+}
+//alert(atpos+" "+dotpos);
+}
+</script>
+</head>
+<body>
+</center>
+<form action="index.html" method="post">
+<div id="main">
+<h3 align="center" style="color: #DCF8EF">Registration Form</h5>
+<div id="row" style="color: #DCF8EF">
+<div class="col">First Name:</div>
+<div class="col"><input type="text" id="fn"  onkeypress="return chkAplha(event,'error')" onblur="chkblnk('fn','error')"/></div>
+<div class="col" id="error" style="color:red"></div>
+</div>
+<div id="row" style="color: #DCF8EF">
+<div class="col">Last Name:</div>
+<div class="col"><input type="text" id="ln" onblur="chkblnk('ln','error1')"/></div>
+<div class="col" id="error1" style="color:red"></div>
+</div>
+<div id="row" style="color: #DCF8EF">
+<div class="col">Email id:</div>
+<div class="col">
+<input type="text" id="e" onblur="chkeid()"/></div>
+<div class="col" id="error2" style="color:red"></div>
+</div>
+<div id="row" style="color: #DCF8EF">
+<div class="col">Mobile Number:</div>
+<div class="col"><input type="password" id="p"  onblur="chkblnk('p','error3')"/></div>
+<div class="col" id="error3" style="color:red"></div>
+</div>
+<div id="row" style="color: #DCF8EF">
+<div class="col">Blood Group:</div>
+<div class="col"><input type="password" id="cp"  onblur="chkblnk('cp','error4')"/></div>
+<div class="col" style="color:red" id="error4"></div>
+</div>
+<div id="row" style="color: #DCF8EF">
+</div>
+<div class="col" style="color: #DCF8EF">Residential Address:</div>
+<div class="col">
+<textarea id="adds" onblur="chkblnk('adds','error5')"></textarea></div>
+<div class="col" style="color:red" id="error5"></div>
+</div>
+
+</div>
+<br>
+<br>
+<tr>
+<td>
+  <label for="home"></label>
+</td>
+<td>
+  <input type="submit" id="home" name="home" value="Home" />
+</td>
+</tr>
+<br>
+<br>
+<tr>
+  <td>
+    <label for="submit"></label>
+  </td>
+  <td>
+    <input type="submit" id="submitBtn" name="submit" value="Submit" onclick="showAlert()" />
+  </td>
+</tr>
+
+<script>
+  function showAlert() {
+    alert("Registration successful!");
+  }
+</script>
+
+</center>
+
+</body>
+</html>
